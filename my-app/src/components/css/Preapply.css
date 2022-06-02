@@ -1,0 +1,12 @@
+div{
+    font-family: 'Quicksand', sans-serif;
+}
+p{
+    text-align: center;
+}
+Form{
+    float: left;
+    background-color: rgb(52, 49, 49);
+    width: 400px;
+    height: 300px;
+}

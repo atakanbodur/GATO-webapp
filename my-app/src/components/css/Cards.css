@@ -1,0 +1,21 @@
+img{
+    padding-left:0.2rem;
+    margin-top: 4rem;
+    width: 33%;
+}
+#prop{
+    width: 33%;
+}
+#gato, #plan{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.cards{
+    display: block;
+    margin-left: 42%;
+    margin-right: 33%;
+    width: 50%;
+
+}

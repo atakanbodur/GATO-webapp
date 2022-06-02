@@ -1,0 +1,21 @@
+footer {
+    font-size: 0.75em;
+    text-align: center;
+    clear: both;
+    padding-top: 50px; 
+  }
+  
+.contact{
+    float: left;
+    width: 33%;
+    display: inline-block;
+}
+.about{
+    width: 33%;
+    display: inline-block;
+}
+.faq{
+    float: right;
+    width: 33%;
+    display: inline-block;
+}

@@ -1,0 +1,40 @@
+form{
+    margin-top:4rem;
+    margin-left: 4rem;
+}
+form h2{
+    color: #fff;
+}
+label{
+font-family: 'Quicksand', sans-serif;
+margin-left: 1rem;
+color: #fff;
+}
+input{
+    margin-left: 4rem;    
+}
+.userName{
+    margin-left: 7.2rem;
+}
+.email{
+    margin-left: 9.04rem;
+}
+.dateOfBirth{
+    width: 11.45rem;
+    margin-left: 6.2rem;
+}
+.password{
+    margin-left: 7.5rem;
+}
+button{
+    margin-top: 2rem;
+    margin-left: 6rem;
+    width: 12rem;
+}
+#p2{
+    margin-left: 35px;
+    padding-top: 2rem;
+}
+h1{
+    padding-top: 2rem;
+}
