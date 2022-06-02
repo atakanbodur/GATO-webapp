@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,7 +43,7 @@ public class AppUserController {
     }
 
     @GetMapping("/get-all")
-    public ResponseEntity<List<AppUser>> getAll(){
+    public ResponseEntity<Collection<AppUser>> getAll(){
         return ResponseEntity.ok().body(service.getAll());
     }
 
