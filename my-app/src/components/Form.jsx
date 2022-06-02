@@ -1,13 +1,9 @@
 import React from "react";
 import axios from 'axios';
+import "./css/Form.css";
 // import userEvent from "@testing-library/user-event";
 
 function Form() {
-    // const [name, setName] = useState("");
-    // const [email, setEmail] = useState("");
-    // const [date, setDate] = useState("");
-    // const [password, setPassword] = useState("");
-    // const [rpassword, setRpassword] = useState("");
 
     const [error, setError] = React.useState("");
     const [formValue, setformValue] = React.useState({
@@ -49,32 +45,15 @@ function Form() {
         });
     }
 
-    // function handleNameChange(event) {
-    //     setName(event.target.value);
-    // }
-
-    // function handleEmailChange(event) {
-    //     setEmail(event.target.value);
-    // }
-
-    // function handleDateChange(event) {
-    //     setDate(event.target.value);
-    // }
-
-    // function handlePasswordChange(event) {
-    //     setPassword(event.target.value);
-    // }
-    // function handleRpasswordChange(event) {
-    //     setRpassword(event.target.value);
-    // }
 
     return (
-        <div>
+        <div col-lg-6 col-md-6 col-sm-12>
             <h2>Pre-apply for an Account</h2>
             <form onSubmit={handleSubmit}>
                 <label>
                     Username:
                     <input
+                        class="userName"
                         name="userName"
                         onChange={handleChange}
                         type="text"
@@ -87,6 +66,7 @@ function Form() {
                 <label>
                     E-mail:
                     <input
+                        class="email"
                         name="email"
                         onChange={handleChange}
                         type="email"
@@ -98,6 +78,7 @@ function Form() {
                 <label>
                     Date of Birth:
                     <input
+                        class="dateOfBirth"
                         name="dateOfBirth"
                         onChange={handleChange}
                         type="date"
@@ -109,6 +90,7 @@ function Form() {
                 <label>
                     Password:
                     <input
+                        class="password"
                         name="password"
                         onChange={handleChange}
                         type="password"
@@ -134,6 +116,12 @@ function Form() {
                     Apply
                 </button>
             </form>
+            <div col-lg-6 col-md-6 col-sm-6>
+                <h1>Pre-apply Benefits</h1>
+                <p id="p2"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
         </div>
     );
 }
