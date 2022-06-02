@@ -9,6 +9,7 @@ function Form() {
     // const [password, setPassword] = useState("");
     // const [rpassword, setRpassword] = useState("");
 
+    const [error, setError] = React.useState("");
     const [formValue, setformValue] = React.useState({
         userName: '',
         email: '',
@@ -16,25 +17,28 @@ function Form() {
         password: ''
     });
 
-    const handleSubmit = async() => {
+    const handleSubmit = async(e) => {
         // store the states in the form data
         const loginFormData = new FormData();
-        loginFormData.append("username", formValue.userName)
+        loginFormData.append("userName", formValue.userName)
         loginFormData.append("email", formValue.email)
         loginFormData.append("dateOfBirth", formValue.dateOfBirth)
         loginFormData.append("password", formValue.password)
-      
+
+        e.preventDefault();
+
         try {
-          // make axios post request
-          const response = await axios({
-            method: "post",
-            url: "localhost:8080/user/save-user",
-            data: loginFormData
-          });
+            // make axios post request
+            const response = await axios({
+                method: "post",
+                url: "http://localhost:8080/user/save-user",
+                data: loginFormData
+            });
         } catch(error) {
-          console.log(error)
+            setError(error.message)
+            console.log(error)
         }
-      }
+    }
 
     const handleChange = (event) => {
         setformValue({
@@ -121,6 +125,7 @@ function Form() {
                     />
                 </label>
                 <br></br>
+                <div style={{color:"red"}}>{error}</div>
                 <button
                     type="submit"
                 >

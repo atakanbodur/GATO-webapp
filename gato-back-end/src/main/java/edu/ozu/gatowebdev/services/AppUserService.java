@@ -14,8 +14,17 @@ public class AppUserService {
     @Autowired
     AppUserRepository repo;
     public AppUser createUser(AppUser user){
-        AppUser saved = repo.save(user);
-        return saved;
+        AppUser userCheck = new AppUser();
+        try {
+             userCheck = repo.findByUserName(user.getUserName()).get();
+
+        } catch (Exception e) {
+            userCheck = repo.save(user);
+            return userCheck;
+        }
+        if(userCheck!=null)
+            throw new RuntimeException("User registered");
+        return userCheck;
     }
     public Optional<AppUser> getUserByUsername(String name){
         return repo.findByUserName(name);
