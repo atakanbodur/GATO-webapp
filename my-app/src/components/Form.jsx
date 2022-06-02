@@ -17,7 +17,7 @@ function Form() {
         password: ''
     });
 
-    const handleSubmit = async(e) => {
+    const handleSubmit = async (e) => {
         // store the states in the form data
         const loginFormData = new FormData();
         loginFormData.append("userName", formValue.userName)
@@ -34,8 +34,8 @@ function Form() {
                 url: "http://localhost:8080/user/save-user",
                 data: loginFormData
             });
-        } catch(error) {
-            setError(error.message)
+        } catch (error) {
+            setError(error.response.data)
             console.log(error)
         }
     }
@@ -125,7 +125,7 @@ function Form() {
                     />
                 </label>
                 <br></br>
-                <div style={{color:"red"}}>{error}</div>
+                <div style={{ color: "red" }}>{error}</div>
                 <button
                     type="submit"
                 >

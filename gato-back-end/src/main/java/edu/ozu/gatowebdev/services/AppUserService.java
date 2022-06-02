@@ -14,17 +14,15 @@ public class AppUserService {
     @Autowired
     AppUserRepository repo;
     public AppUser createUser(AppUser user){
-        AppUser userCheck = new AppUser();
-        try {
-             userCheck = repo.findByUserName(user.getUserName()).get();
-
-        } catch (Exception e) {
-            userCheck = repo.save(user);
-            return userCheck;
-        }
-        if(userCheck!=null)
-            throw new RuntimeException("User registered");
-        return userCheck;
+        Optional<AppUser> checkedUser = null;
+        checkedUser = repo.findByUserName(user.getUserName());
+        if(checkedUser.isPresent())
+            throw new RuntimeException("User exists");
+        checkedUser = repo.findByEmail(user.getEmail());
+        if(checkedUser.isPresent())
+            throw new RuntimeException("Email exists");
+        AppUser saved = repo.save(user);
+        return saved;
     }
     public Optional<AppUser> getUserByUsername(String name){
         return repo.findByUserName(name);
