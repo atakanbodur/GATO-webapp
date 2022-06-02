@@ -29,8 +29,7 @@ function Form() {
           const response = await axios({
             method: "post",
             url: "localhost:8080/user/save-user",
-            data: loginFormData,
-            headers: { "Content-Type": "multipart/form-data" },
+            data: loginFormData
           });
         } catch(error) {
           console.log(error)
@@ -70,6 +69,7 @@ function Form() {
                 <label>
                     Username:
                     <input
+                        name="userName"
                         onChange={handleChange}
                         type="text"
                         value={formValue.userName}
@@ -81,6 +81,7 @@ function Form() {
                 <label>
                     E-mail:
                     <input
+                        name="email"
                         onChange={handleChange}
                         type="email"
                         value={formValue.email}
@@ -91,6 +92,7 @@ function Form() {
                 <label>
                     Date of Birth:
                     <input
+                        name="dateOfBirth"
                         onChange={handleChange}
                         type="date"
                         value={formValue.dateOfBirth}
@@ -101,6 +103,7 @@ function Form() {
                 <label>
                     Password:
                     <input
+                        name="password"
                         onChange={handleChange}
                         type="password"
                         value={formValue.password}
