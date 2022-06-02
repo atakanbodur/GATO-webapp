@@ -2,6 +2,8 @@
  GATO-webapp aims to create an opportunity for users to pre-apply to the new social network.
  Application uses React.js and Spring Boot for data management.
  
+ [Repo](https://github.com/atakanbodur/GATO-webapp)
+ 
 
 ## Prerequisites
 
