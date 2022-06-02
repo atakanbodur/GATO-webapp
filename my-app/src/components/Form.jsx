@@ -34,9 +34,11 @@ function Form() {
                 url: "http://localhost:8080/user/save-user",
                 data: loginFormData
             });
+            alert("user created succesfully")
         } catch (error) {
             setError(error.response.data)
             console.log(error)
+            alert(error.response.data)
         }
     }
 
@@ -125,7 +127,7 @@ function Form() {
                     />
                 </label>
                 <br></br>
-                <div style={{ color: "red" }}>{error}</div>
+                {/* <div style={{ color: "red" }}>{error}</div> */}
                 <button
                     type="submit"
                 >
