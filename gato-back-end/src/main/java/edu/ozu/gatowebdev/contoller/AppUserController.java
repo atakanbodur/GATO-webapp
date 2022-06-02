@@ -20,20 +20,30 @@ public class AppUserController {
 
     @GetMapping("/test")
     public ResponseEntity<String> Test() {
-        String str = "tst";
+        String str = "testing...1,2,3";
         return ResponseEntity.ok().body(str);
     }
 
     @PostMapping("/save-user")
     public ResponseEntity<AppUser> saveUser(@RequestBody AppUser user) {
-            AppUser createdUser = service.createUser(user);
-            System.out.println("User created. \n" + user.toString());
-            return ResponseEntity.ok().body(createdUser);
+                AppUser createdUser = service.createUser(user);
+                System.out.println("User created. \n" + user.toString());
+                return ResponseEntity.ok().body(createdUser);
     }
 
     @GetMapping("/get-user-by-name/{name}")
     public ResponseEntity<Optional<AppUser>> getUserByUsername(@PathVariable String name){
         return ResponseEntity.ok().body(service.getUserByUsername(name));
+    }
+
+    @GetMapping("/get-user-by-email/{email}")
+    public ResponseEntity<Optional<AppUser>> getUserByEmail(@PathVariable String email){
+        return ResponseEntity.ok().body(service.getUserByEmail(email));
+    }
+
+    @GetMapping("/get-all")
+    public ResponseEntity<List<AppUser>> getAll(){
+        return ResponseEntity.ok().body(service.getAll());
     }
 
 

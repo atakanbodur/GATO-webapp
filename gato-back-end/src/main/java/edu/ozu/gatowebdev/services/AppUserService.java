@@ -20,4 +20,6 @@ public class AppUserService {
     public Optional<AppUser> getUserByUsername(String name){
         return repo.findByUserName(name);
     }
+    public Optional<AppUser> getUserByEmail(String email) { return repo.findByEmail(email); }
+    public List<AppUser> getAll(){ return repo.findAll(); }
 }
